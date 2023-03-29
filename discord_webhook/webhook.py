@@ -238,6 +238,7 @@ class DiscordWebhook:
     content: Optional[Union[str, bytes]]
     username: Optional[str]
     avatar_url: Optional[str]
+    thread_name: Optional[str]
     tts: bool
     attachments: Optional[List[Dict[str, Any]]]
     files: Dict[str, Tuple[Optional[str], Union[bytes, str]]]
@@ -255,6 +256,7 @@ class DiscordWebhook:
         content: Optional[str] = None,
         username: Optional[str] = None,
         avatar_url: Optional[str] = None,
+        thread_name: Optional[str] = None,
         tts: bool = False,
         attachments: Optional[List[Dict[str, Any]]] = None,
         files: Optional[Dict[str, Tuple[Optional[str], Union[bytes, str]]]] = None,
@@ -272,6 +274,7 @@ class DiscordWebhook:
         :keyword ``content:`` the message contents (type: str)\n
         :keyword ``username:`` override the default username of the webhook\n
         :keyword ``avatar_url:`` override the default avatar of the webhook\n
+        :keyword ``thread_name:`` used to send in a forum channel\n
         :keyword ``tts:`` true if this is a TTS message\n
         :keyword ``attachments`` optional dict of attachments.
         Will be set after executing a webhook\n
@@ -297,6 +300,7 @@ class DiscordWebhook:
         self.content = content
         self.username = username
         self.avatar_url = avatar_url
+        self.thread_name = thread_name
         self.tts = tts
         self.attachments = attachments
         self.files = files
