@@ -399,6 +399,14 @@ class DiscordWebhook:
         """
         self.content = content
 
+    def set_thread_name(self, thread_name: str) -> None:
+        """
+        Set thread_name.
+        :param thread_name: name of thread
+        :type thread_name: string
+        """
+        self.thread_name = thread_name
+
     @property
     def json(self) -> Dict[str, Any]:
         """
